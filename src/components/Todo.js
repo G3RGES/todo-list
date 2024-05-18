@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-const Todo = () => {
+export const Todo = () => {
   return (
     <div className="Todo">
       <p className="">Sleep</p>
@@ -22,5 +22,3 @@ const Todo = () => {
     </div>
   );
 };
-
-export default Todo;
