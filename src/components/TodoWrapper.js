@@ -24,6 +24,7 @@ const TodoWrapper = () => {
   return (
     <div className="TodoWrapper">
       <TodoForm addTodo={addTodo} />
+      <Todo />
     </div>
   );
 };
