@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
-const EditTodoForm = () => {
-  return <div>EditTodoForm</div>;
+export const EditTodoForm = ({ addTodo }) => {
+  const [value, setValue] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // console.log(value); //*TESTING
+
+    addTodo(value);
+
+    setValue("");
+  };
+
+  return (
+    <form className="TodoForm" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        className="todo-input"
+        placeholder="what is the task today ?"
+        onChange={(e) => setValue(e.target.value)}
+        value={value}
+      />
+      <button type="submit" className="todo-btn">
+        Add Task
+      </button>
+    </form>
+  );
 };
-
-export default EditTodoForm;
