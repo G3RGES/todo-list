@@ -18,13 +18,24 @@ const TodoWrapper = () => {
       { id: uuidv4(), task: todo, completed: false, isEditing: false },
     ]);
 
-    console.log(todos);
+    // console.log(todos); //*TESTING
+  };
+
+  const toggleComplete = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
   };
 
   return (
     <div className="TodoWrapper">
+      <h1>Get Things Done</h1>
       <TodoForm addTodo={addTodo} />
-      <Todo />
+      {todos.map((todo, idx) => (
+        <Todo task={todo} key={idx} toggleComplete={toggleComplete} />
+      ))}
     </div>
   );
 };
